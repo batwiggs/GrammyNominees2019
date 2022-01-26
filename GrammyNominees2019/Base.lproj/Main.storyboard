@@ -1,24 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GrammyNominees2019" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="62GrammyAwards-hero" translatesAutoresizingMaskIntoConstraints="NO" id="gdv-Oz-A6A">
+                                <rect key="frame" x="20" y="44" width="374" height="224"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="224" id="gG7-zL-fJo"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fej-aR-FUq">
+                                <rect key="frame" x="20" y="276" width="374" height="32"/>
+                                <segments>
+                                    <segment title="Album"/>
+                                    <segment title="Record"/>
+                                    <segment title="Song"/>
+                                    <segment title="Artist"/>
+                                </segments>
+                                <connections>
+                                    <action selector="getSelectedList:" destination="BYZ-38-t0r" eventType="valueChanged" id="wUG-pp-FI0"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVF-P9-PFd">
+                                <rect key="frame" x="20" y="315" width="374" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        <constraints>
+                            <constraint firstItem="Fej-aR-FUq" firstAttribute="top" secondItem="gdv-Oz-A6A" secondAttribute="bottom" constant="8" symbolic="YES" id="1M3-ba-HvL"/>
+                            <constraint firstItem="BVF-P9-PFd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="F6a-k9-wsW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BVF-P9-PFd" secondAttribute="trailing" constant="20" id="PNE-wW-LBi"/>
+                            <constraint firstItem="BVF-P9-PFd" firstAttribute="top" secondItem="Fej-aR-FUq" secondAttribute="bottom" constant="8" symbolic="YES" id="W5J-sm-LxX"/>
+                            <constraint firstItem="Fej-aR-FUq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wuz-ou-Noh"/>
+                            <constraint firstItem="gdv-Oz-A6A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YY9-bg-ZIn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fej-aR-FUq" secondAttribute="trailing" constant="20" id="dt1-Fm-tM5"/>
+                            <constraint firstItem="gdv-Oz-A6A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hNE-RO-gPV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gdv-Oz-A6A" secondAttribute="trailing" constant="20" id="sCY-Uz-RYX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nomineeList" destination="BVF-P9-PFd" id="bZT-SN-q5Z"/>
+                        <outlet property="tabs" destination="Fej-aR-FUq" id="7Pr-Gy-ypy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-23.188405797101453" y="66.964285714285708"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="62GrammyAwards-hero" width="1130" height="665"/>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
